@@ -1,20 +1,21 @@
 @charset "UTF-8";
 
 /***変数***/
-$text: 1.2em;
-$border: 1px solid #c3c3c3;
+$main-text: 1.6em;
+$aside-text: 1.2em;
+$border: 1px solid #777;
 
 @mixin phone {
-  @media screen and (max-width: 896px) {  @content  };
+  @media screen and (max-width: 767px) {  @content  };
 }
 
 /**共通部分**/
 body{
-  font-family: "Raleway", sans-serif;
+  font-family: "Noto Sans", "Noto Sans JP", sans-serif;
   margin: 0 auto;
   text-align: center;
   letter-spacing: 0em;
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: normal;
   color: #333;
   font-size: 62.5%;
@@ -33,7 +34,88 @@ ul,li,p{
 *{
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right bottom;
   margin: 0;
   text-transform: uppercase;
+}
+
+/****ボタン****/
+.more-button{
+  font-size: 1.4em;
+  position: relative;
+  &::after{
+    display: block;
+    content: "";
+    width: 82px;
+    height: 1px;
+    border-bottom: $border;
+    position: absolute;
+    bottom: -2.5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.wrapper{
+  width: 91.5%;
+  max-width: 1168px;
+  margin: 0 auto;
+}
+/****ヘッダー****/
+.header{
+  .header__logo{
+    width: 145px;
+    padding-top: 20px;
+  }
+}
+.main-nav{
+  margin-top: 16.8px;
+  background: #333;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  height: 39px;
+  &__list{
+    display: flex;
+    padding-top: 13px;
+    width: 91.5%;
+    max-width: 1168px;
+    margin: 0 auto;
+  }
+  &__item{
+    font-size: 1.4em;
+    padding-right: 61px;
+    color: #fff;
+  }
+}
+
+/****ピックアップ****/
+.pickup{
+  margin-top: 40px;
+  &__list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 23px;
+  }
+  &__text{
+    padding-top: 23px;
+    font-size: $main-text;
+    font-weight: bold;
+    text-align: left;
+  }
+  &__link{
+    display: block;
+    margin-top: 19px;
+  }
+}
+
+/****コンテンツ****/
+.container{
+  display: flex;
+  main{
+    width: 70%;
+  }
+  aside{
+    width: 30%;
+    flex-shrink: 0;
+    margin-left: 50px;
+  }
 }

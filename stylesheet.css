@@ -2,11 +2,11 @@
 /***変数***/
 /**共通部分**/
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Noto Sans", "Noto Sans JP", sans-serif;
   margin: 0 auto;
   text-align: center;
   letter-spacing: 0em;
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: normal;
   color: #333;
   font-size: 62.5%;
@@ -29,8 +29,105 @@ ul, li, p {
 * {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right bottom;
   margin: 0;
   text-transform: uppercase;
+}
+
+/****ボタン****/
+.more-button {
+  font-size: 1.4em;
+  position: relative;
+}
+
+.more-button::after {
+  display: block;
+  content: "";
+  width: 82px;
+  height: 1px;
+  border-bottom: 1px solid #777;
+  position: absolute;
+  bottom: -2.5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.wrapper {
+  width: 91.5%;
+  max-width: 1168px;
+  margin: 0 auto;
+}
+
+/****ヘッダー****/
+.header .header__logo {
+  width: 145px;
+  padding-top: 20px;
+}
+
+.main-nav {
+  margin-top: 16.8px;
+  background: #333;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  height: 39px;
+}
+
+.main-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 13px;
+  width: 91.5%;
+  max-width: 1168px;
+  margin: 0 auto;
+}
+
+.main-nav__item {
+  font-size: 1.4em;
+  padding-right: 61px;
+  color: #fff;
+}
+
+/****ピックアップ****/
+.pickup {
+  margin-top: 40px;
+}
+
+.pickup__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.pickup__text {
+  padding-top: 23px;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.pickup__link {
+  display: block;
+  margin-top: 19px;
+}
+
+/****コンテンツ****/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container main {
+  width: 70%;
+}
+
+.container aside {
+  width: 30%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 50px;
 }
 /*# sourceMappingURL=stylesheet.css.map */
