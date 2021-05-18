@@ -2,7 +2,7 @@
 
 /***変数***/
 $main-text: 1.6em;
-$aside-text: 1.2em;
+$aside-text: 1.4em;
 $border: 1px solid #777;
 
 @mixin phone {
@@ -15,7 +15,7 @@ body{
   margin: 0 auto;
   text-align: center;
   letter-spacing: 0em;
-  line-height: 1.2;
+  line-height: 1.7;
   font-weight: normal;
   color: #333;
   font-size: 62.5%;
@@ -35,13 +35,15 @@ ul,li,p{
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 /****ボタン****/
 .more-button{
   font-size: 1.4em;
   position: relative;
+  text-transform: uppercase;
+  display: inline-block;
   &::after{
     display: block;
     content: "";
@@ -54,6 +56,11 @@ ul,li,p{
     transform: translateX(-50%);
   }
 }
+/****タイトル****/
+.h3-title{
+  font-size: 1.8em;
+  font-weight: bold;
+}
 
 .wrapper{
   width: 91.5%;
@@ -65,17 +72,18 @@ ul,li,p{
   .header__logo{
     width: 145px;
     padding-top: 20px;
+    padding-bottom: 5px;
   }
 }
 .main-nav{
-  margin-top: 16.8px;
   background: #333;
   margin: 0 calc(50% - 50vw);
   width: 100vw;
-  height: 39px;
+  text-transform: uppercase;
   &__list{
     display: flex;
-    padding-top: 13px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     width: 91.5%;
     max-width: 1168px;
     margin: 0 auto;
@@ -89,33 +97,210 @@ ul,li,p{
 
 /****ピックアップ****/
 .pickup{
-  margin-top: 40px;
+  margin-top: 43px;
   &__list{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 23px;
   }
   &__text{
-    padding-top: 23px;
+    padding-top: 12px;
     font-size: $main-text;
     font-weight: bold;
     text-align: left;
   }
   &__link{
-    display: block;
-    margin-top: 19px;
+    margin-top: 7px;
   }
 }
 
 /****コンテンツ****/
 .container{
   display: flex;
+  margin-top: 55px;
+  margin-bottom: 138px;
   main{
-    width: 70%;
+    width: 65%;
+    flex-shrink: 0;
+    padding-right: 50px;
   }
   aside{
-    width: 30%;
-    flex-shrink: 0;
-    margin-left: 50px;
+    width: 35%;
+    padding-right: 14px;
   }
+}
+/****投稿****/
+.post{
+  margin-top: 78px;
+  &:first-child{
+    margin-top: 0;
+  }
+  &__title{
+    font-size: 2.4em;
+    font-weight: bold;
+    text-align: left;
+  }
+  &__meta{
+    display: flex;
+    padding-top: 7px;
+    font-size: 1.4em;
+  }
+  &__date{
+    padding-right: 30px;
+  }
+  &__image{
+    padding-top: 8px;
+  }
+  &__text{
+    padding-top: 5px;
+    font-size: $main-text;
+    text-align: left;
+    width: 88%;
+    margin: 0 auto;
+  }
+  &__link{
+    margin-top: 18px;
+  }
+}
+/****サイドバー****/
+.prof{
+  margin-top: 20px;
+  &__image{
+    width: 130px;
+    border-radius: 50%;
+  }
+  &__title{
+    padding-top: 18px;
+  }
+  &__text{
+    font-size: $aside-text;
+    padding-top: 16px;
+    text-align: left;
+    margin: 0 auto;
+  }
+}
+
+/****ランキング****/
+.rank{
+  &__title{
+    padding-top: 40px;
+  }
+  &__list{
+    padding-top: 4px;
+  }
+  &__image{
+    margin-top: 24px;
+  }
+  &__text{
+    padding-top: 4px;
+    font-size: $aside-text;
+    text-align: left;
+  }
+}
+
+/****アーカイブ****/
+.archive{
+  &__title{
+  padding-top: 55px;
+  }
+  &__list{
+    padding-top: 20px;
+  }
+  &__item{
+    font-size: $aside-text;
+    line-height: 60px;
+    text-align: left;
+    border-top: $border;
+    padding-left: 25px;
+    &:last-child{
+      border-bottom: $border;
+    }
+  }
+  &__link{
+    display: block;
+
+  }
+}
+
+footer{
+  background: #f7f7f7;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+}
+.footer-content{
+  width: 91.5%;
+  max-width: 1168px;
+  margin: 0 auto;
+  padding-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.about{
+  margin-right: 40px;
+  flex-shrink: 0;
+  text-align: left;
+  &__text{
+    padding-top: 25px;
+    font-size: $aside-text;
+  }
+  &__list{
+    padding-top: 10px;
+    font-size: $aside-text;
+
+  }
+  &__link{
+    padding-bottom: 5px;
+    padding-left: 19px;
+    position: relative;
+    display: inline-block;
+    &::before{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 14px;
+      height: 12px;
+      background: url(img/listmark@2x.png) no-repeat;
+      background-size: contain;
+      top: 25%;
+      left: 0;
+    }
+  }
+}
+.menu{
+  margin-left: 25px;
+  margin-right: 20px;
+  &__title{
+    text-align: left;
+  }
+  &__list{
+    margin-top: 25px;
+    text-transform: uppercase;
+  }
+  &__item{
+    font-size: $aside-text;
+    text-align: left;
+    line-height: 50px;
+    padding-left: 15px;
+    border-top: $border;
+    &:last-child{
+      border-bottom: $border;
+    }
+  }
+  &__link{
+    display: block;
+  }
+}
+.twitter{
+  margin-left: 40px;
+  &__title{
+    margin-bottom: 32px;
+    text-align: left;
+  }
+}
+
+.copy{
+  display: block;
+  padding-top: 75px;
+  padding-bottom: 12px;
+  font-size: 1.2em;
 }

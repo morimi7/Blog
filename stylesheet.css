@@ -6,7 +6,7 @@ body {
   margin: 0 auto;
   text-align: center;
   letter-spacing: 0em;
-  line-height: 1.2;
+  line-height: 1.7;
   font-weight: normal;
   color: #333;
   font-size: 62.5%;
@@ -30,13 +30,15 @@ ul, li, p {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 /****ボタン****/
 .more-button {
   font-size: 1.4em;
   position: relative;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 .more-button::after {
@@ -52,6 +54,12 @@ ul, li, p {
           transform: translateX(-50%);
 }
 
+/****タイトル****/
+.h3-title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
 .wrapper {
   width: 91.5%;
   max-width: 1168px;
@@ -62,21 +70,22 @@ ul, li, p {
 .header .header__logo {
   width: 145px;
   padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 .main-nav {
-  margin-top: 16.8px;
   background: #333;
   margin: 0 calc(50% - 50vw);
   width: 100vw;
-  height: 39px;
+  text-transform: uppercase;
 }
 
 .main-nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   width: 91.5%;
   max-width: 1168px;
   margin: 0 auto;
@@ -90,7 +99,7 @@ ul, li, p {
 
 /****ピックアップ****/
 .pickup {
-  margin-top: 40px;
+  margin-top: 43px;
 }
 
 .pickup__list {
@@ -102,15 +111,14 @@ ul, li, p {
 }
 
 .pickup__text {
-  padding-top: 23px;
+  padding-top: 12px;
   font-size: 1.6em;
   font-weight: bold;
   text-align: left;
 }
 
 .pickup__link {
-  display: block;
-  margin-top: 19px;
+  margin-top: 7px;
 }
 
 /****コンテンツ****/
@@ -118,16 +126,226 @@ ul, li, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 55px;
+  margin-bottom: 138px;
 }
 
 .container main {
-  width: 70%;
+  width: 65%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding-right: 50px;
 }
 
 .container aside {
-  width: 30%;
+  width: 35%;
+  padding-right: 14px;
+}
+
+/****投稿****/
+.post {
+  margin-top: 78px;
+}
+
+.post:first-child {
+  margin-top: 0;
+}
+
+.post__title {
+  font-size: 2.4em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.post__meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 7px;
+  font-size: 1.4em;
+}
+
+.post__date {
+  padding-right: 30px;
+}
+
+.post__image {
+  padding-top: 8px;
+}
+
+.post__text {
+  padding-top: 5px;
+  font-size: 1.6em;
+  text-align: left;
+  width: 88%;
+  margin: 0 auto;
+}
+
+.post__link {
+  margin-top: 18px;
+}
+
+/****サイドバー****/
+.prof {
+  margin-top: 20px;
+}
+
+.prof__image {
+  width: 130px;
+  border-radius: 50%;
+}
+
+.prof__title {
+  padding-top: 18px;
+}
+
+.prof__text {
+  font-size: 1.4em;
+  padding-top: 16px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/****ランキング****/
+.rank__title {
+  padding-top: 40px;
+}
+
+.rank__list {
+  padding-top: 4px;
+}
+
+.rank__image {
+  margin-top: 24px;
+}
+
+.rank__text {
+  padding-top: 4px;
+  font-size: 1.4em;
+  text-align: left;
+}
+
+/****アーカイブ****/
+.archive__title {
+  padding-top: 55px;
+}
+
+.archive__list {
+  padding-top: 20px;
+}
+
+.archive__item {
+  font-size: 1.4em;
+  line-height: 60px;
+  text-align: left;
+  border-top: 1px solid #777;
+  padding-left: 25px;
+}
+
+.archive__item:last-child {
+  border-bottom: 1px solid #777;
+}
+
+.archive__link {
+  display: block;
+}
+
+footer {
+  background: #f7f7f7;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+}
+
+.footer-content {
+  width: 91.5%;
+  max-width: 1168px;
+  margin: 0 auto;
+  padding-top: 48px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.about {
+  margin-right: 40px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  margin-left: 50px;
+  text-align: left;
+}
+
+.about__text {
+  padding-top: 25px;
+  font-size: 1.4em;
+}
+
+.about__list {
+  padding-top: 10px;
+  font-size: 1.4em;
+}
+
+.about__link {
+  padding-bottom: 5px;
+  padding-left: 19px;
+  position: relative;
+  display: inline-block;
+}
+
+.about__link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 14px;
+  height: 12px;
+  background: url(img/listmark@2x.png) no-repeat;
+  background-size: contain;
+  top: 25%;
+  left: 0;
+}
+
+.menu {
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+.menu__title {
+  text-align: left;
+}
+
+.menu__list {
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+
+.menu__item {
+  font-size: 1.4em;
+  text-align: left;
+  line-height: 50px;
+  padding-left: 15px;
+  border-top: 1px solid #777;
+}
+
+.menu__item:last-child {
+  border-bottom: 1px solid #777;
+}
+
+.menu__link {
+  display: block;
+}
+
+.twitter {
+  margin-left: 40px;
+}
+
+.twitter__title {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.copy {
+  display: block;
+  padding-top: 75px;
+  padding-bottom: 12px;
+  font-size: 1.2em;
 }
 /*# sourceMappingURL=stylesheet.css.map */
