@@ -9,6 +9,11 @@ $border: 1px solid #777;
   @media screen and (max-width: 767px) {  @content  };
 }
 
+@mixin hover{
+  opacity: 0.6;
+  transition: all .2s ease;
+}
+
 /**共通部分**/
 body{
   font-family: "Noto Sans", "Noto Sans JP", sans-serif;
@@ -54,7 +59,12 @@ ul,li,p{
     bottom: -2.5px;
     left: 50%;
     transform: translateX(-50%);
+    transition: all .2s ease;
   }
+  &:hover::after{
+    opacity: 0;
+  }
+
 }
 /****タイトル****/
 .h3-title{
@@ -69,10 +79,22 @@ ul,li,p{
 }
 /****ヘッダー****/
 .header{
-  .header__logo{
-    width: 145px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  &__logo{
+    width: 91.5%;
+    max-width: 1168px;
+    margin: 0 auto;
+    text-align: left;
     padding-top: 20px;
     padding-bottom: 5px;
+
+  }
+  &__link{
+    width: 145px;
   }
 }
 .main-nav{
@@ -93,15 +115,29 @@ ul,li,p{
     padding-right: 61px;
     color: #fff;
   }
+  &__link{
+    &:hover{
+      @include hover;
+    }
+  }
+  @include phone(){
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-scrolling: touch;
+  }
 }
 
 /****ピックアップ****/
 .pickup{
-  margin-top: 43px;
+  margin-top: 104px + 43px;
   &__list{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 23px;
+    @include phone(){
+      grid-template-columns: repeat(1,3fr);
+      gap: 30px;
+    }
   }
   &__text{
     padding-top: 12px;
@@ -119,14 +155,27 @@ ul,li,p{
   display: flex;
   margin-top: 55px;
   margin-bottom: 138px;
+  @include phone(){
+    margin-top: 90px;
+    margin-bottom: 120px;
+    flex-direction: column;
+  }
   main{
     width: 65%;
     flex-shrink: 0;
     padding-right: 50px;
+    @include phone(){
+      width: 100%;
+      padding-right: 0;
+    }
   }
   aside{
     width: 35%;
     padding-right: 14px;
+    @include phone(){
+      width: 100%;
+      padding-right: 0;
+    }
   }
 }
 /****投稿****/
@@ -157,6 +206,9 @@ ul,li,p{
     text-align: left;
     width: 88%;
     margin: 0 auto;
+    @include phone(){
+      width: 75%;
+    }
   }
   &__link{
     margin-top: 18px;
@@ -165,6 +217,9 @@ ul,li,p{
 /****サイドバー****/
 .prof{
   margin-top: 20px;
+  @include phone(){
+    margin-top: 75px;
+  }
   &__image{
     width: 130px;
     border-radius: 50%;
@@ -187,6 +242,11 @@ ul,li,p{
   }
   &__list{
     padding-top: 4px;
+  }
+  &__link{
+    &:hover{
+      @include hover;
+    }
   }
   &__image{
     margin-top: 24px;
@@ -218,7 +278,9 @@ ul,li,p{
   }
   &__link{
     display: block;
-
+    &:hover{
+      @include hover;
+    }
   }
 }
 
@@ -234,11 +296,17 @@ footer{
   padding-top: 48px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
+  @include phone(){
+    grid-template-columns: repeat(1,3fr);
+  }
 }
 .about{
   margin-right: 40px;
   flex-shrink: 0;
   text-align: left;
+  @include phone(){
+    margin-right: 0;
+  }
   &__text{
     padding-top: 25px;
     font-size: $aside-text;
@@ -246,7 +314,6 @@ footer{
   &__list{
     padding-top: 10px;
     font-size: $aside-text;
-
   }
   &__link{
     padding-bottom: 5px;
@@ -261,14 +328,23 @@ footer{
       height: 12px;
       background: url(img/listmark@2x.png) no-repeat;
       background-size: contain;
-      top: 25%;
+      top: 20%;
       left: 0;
+    }
+    &:hover{
+      @include hover;
     }
   }
 }
 .menu{
   margin-left: 25px;
   margin-right: 20px;
+  @include phone(){
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 55px;
+  }
+
   &__title{
     text-align: left;
   }
@@ -288,10 +364,17 @@ footer{
   }
   &__link{
     display: block;
+    &:hover{
+      @include hover;
+    }
   }
 }
 .twitter{
   margin-left: 40px;
+  @include phone(){
+    margin-left: 0;
+    margin-top: 30px;
+  }
   &__title{
     margin-bottom: 32px;
     text-align: left;

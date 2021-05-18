@@ -52,6 +52,12 @@ ul, li, p {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.more-button:hover::after {
+  opacity: 0;
 }
 
 /****タイトル****/
@@ -67,10 +73,25 @@ ul, li, p {
 }
 
 /****ヘッダー****/
-.header .header__logo {
-  width: 145px;
+.header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header__logo {
+  width: 91.5%;
+  max-width: 1168px;
+  margin: 0 auto;
+  text-align: left;
   padding-top: 20px;
   padding-bottom: 5px;
+}
+
+.header__link {
+  width: 145px;
 }
 
 .main-nav {
@@ -97,9 +118,23 @@ ul, li, p {
   color: #fff;
 }
 
+.main-nav__link:hover {
+  opacity: 0.6;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .main-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-scrolling: touch;
+  }
+}
+
 /****ピックアップ****/
 .pickup {
-  margin-top: 43px;
+  margin-top: 147px;
 }
 
 .pickup__list {
@@ -108,6 +143,14 @@ ul, li, p {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   gap: 23px;
+}
+
+@media screen and (max-width: 767px) {
+  .pickup__list {
+    -ms-grid-columns: (3fr)[1];
+        grid-template-columns: repeat(1, 3fr);
+    gap: 30px;
+  }
 }
 
 .pickup__text {
@@ -130,6 +173,17 @@ ul, li, p {
   margin-bottom: 138px;
 }
 
+@media screen and (max-width: 767px) {
+  .container {
+    margin-top: 90px;
+    margin-bottom: 120px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .container main {
   width: 65%;
   -ms-flex-negative: 0;
@@ -137,9 +191,23 @@ ul, li, p {
   padding-right: 50px;
 }
 
+@media screen and (max-width: 767px) {
+  .container main {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
 .container aside {
   width: 35%;
   padding-right: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .container aside {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 
 /****投稿****/
@@ -181,6 +249,12 @@ ul, li, p {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 767px) {
+  .post__text {
+    width: 75%;
+  }
+}
+
 .post__link {
   margin-top: 18px;
 }
@@ -188,6 +262,12 @@ ul, li, p {
 /****サイドバー****/
 .prof {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .prof {
+    margin-top: 75px;
+  }
 }
 
 .prof__image {
@@ -213,6 +293,12 @@ ul, li, p {
 
 .rank__list {
   padding-top: 4px;
+}
+
+.rank__link:hover {
+  opacity: 0.6;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .rank__image {
@@ -250,6 +336,12 @@ ul, li, p {
   display: block;
 }
 
+.archive__link:hover {
+  opacity: 0.6;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
 footer {
   background: #f7f7f7;
   width: 100vw;
@@ -267,11 +359,24 @@ footer {
       grid-template-columns: repeat(3, 1fr);
 }
 
+@media screen and (max-width: 767px) {
+  .footer-content {
+    -ms-grid-columns: (3fr)[1];
+        grid-template-columns: repeat(1, 3fr);
+  }
+}
+
 .about {
   margin-right: 40px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+  .about {
+    margin-right: 0;
+  }
 }
 
 .about__text {
@@ -299,13 +404,27 @@ footer {
   height: 12px;
   background: url(img/listmark@2x.png) no-repeat;
   background-size: contain;
-  top: 25%;
+  top: 20%;
   left: 0;
+}
+
+.about__link:hover {
+  opacity: 0.6;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .menu {
   margin-left: 25px;
   margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 55px;
+  }
 }
 
 .menu__title {
@@ -333,8 +452,21 @@ footer {
   display: block;
 }
 
+.menu__link:hover {
+  opacity: 0.6;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
 .twitter {
   margin-left: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .twitter {
+    margin-left: 0;
+    margin-top: 30px;
+  }
 }
 
 .twitter__title {
